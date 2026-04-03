@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign in - Google Accounts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b2c5ff",
+                        "surface-bright": "#f6faff",
+                        "on-primary-fixed-variant": "#0040a1",
+                        "on-tertiary-fixed-variant": "#7f2b00",
+                        "surface-variant": "#dfe3e8",
+                        "on-tertiary-container": "#ffcfbe",
+                        "surface-dim": "#d6dadf",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e1e3e1",
+                        "on-surface-variant": "#424654",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#dfe3e8",
+                        "inverse-on-surface": "#edf1f6",
+                        "tertiary-fixed-dim": "#ffb599",
+                        "inverse-primary": "#b2c5ff",
+                        "primary-container": "#0b57d0",
+                        "primary": "#0041a2",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dae2ff",
+                        "tertiary": "#802b00",
+                        "surface": "#f6faff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#370e00",
+                        "tertiary-fixed": "#ffdbce",
+                        "secondary-fixed": "#e1e3e1",
+                        "on-secondary-fixed": "#191c1b",
+                        "surface-container-high": "#e4e9ed",
+                        "on-secondary-container": "#626564",
+                        "background": "#f6faff",
+                        "tertiary-container": "#a83b00",
+                        "secondary-fixed-dim": "#c5c7c5",
+                        "on-primary-container": "#ced9ff",
+                        "on-background": "#171c20",
+                        "secondary": "#5c5f5e",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2c3135",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#0856cf",
+                        "surface-container-low": "#f0f4f9",
+                        "on-surface": "#171c20",
+                        "surface-container": "#eaeef3",
+                        "outline-variant": "#c3c6d6",
+                        "on-primary": "#ffffff",
+                        "outline": "#737785",
+                        "on-secondary-fixed-variant": "#444746",
+                        "on-primary-fixed": "#001847"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f6faff;
+        }
+        .headline-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-editorial {
+            box-shadow: 0 24px 48px rgba(23, 28, 32, 0.05);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(195, 198, 214, 0.2);
+        }
+        .floating-input:focus + label,
+        .floating-input:not(:placeholder-shown) + label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: #0041a2;
+            background: white;
+            padding: 0 4px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col items-center justify-center p-4 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<header class="absolute top-0 left-0 right-0 z-10 docked full-width bg-[#f6faff] dark:bg-slate-900 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center">
+<span class="text-xl font-semibold text-[#171c20] dark:text-slate-100 headline-font tracking-tight">Google</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-[#eaeef3] dark:hover:bg-slate-800 transition-colors duration-200 text-[#5c5f5e] dark:text-slate-400">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#eaeef3] dark:hover:bg-slate-800 transition-colors duration-200 text-[#5c5f5e] dark:text-slate-400">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+</div>
+</header>
+<main class="w-full flex items-center justify-center">
+<div class="w-full max-w-[1024px] grid grid-cols-1 md:grid-cols-2 bg-surface-container-lowest rounded-lg shadow-editorial overflow-hidden">
+<div class="p-10 md:p-14 flex flex-col">
+<div class="mb-10">
+<svg aria-hidden="true" height="48" viewbox="0 0 48 48" width="48">
+<path d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" fill="#4285F4"></path>
+<path d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" fill="#34A853"></path>
+<path d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z" fill="#FBBC05"></path>
+<path d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 3.18 29.93 1.25 24 1.25 15.4 1.25 7.96 6.18 4.34 13.32l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" fill="#EA4335"></path>
+</svg>
+</div>
+<h1 class="text-4xl md:text-5xl headline-font font-medium text-on-surface mb-4 tracking-tight" id="user-greeting">Hi 太美</h1>
+<p class="text-secondary body-md mb-8">Welcome back! Please enter your password to continue.</p>
+<div class="mt-auto hidden md:block">
+<button class="flex items-center gap-3 px-4 py-2 rounded-full border border-outline-variant/30 hover:bg-surface-container transition-all group">
+<div class="w-6 h-6 rounded-full overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling person with friendly expression, soft natural lighting, high end photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt25sia7FRkbh3ZzyNATUMNNhIS2SguqLkH8JzYJDn5DLdtC_Y-H793X7muHVUOrE8QkduBo12GW725t3RzNSdu61PisKzwMX358_cLzw2-y20NKAZflNCqkvAoEztXACSGNKOhxQx2qw2IsSSX4FSvWlKniQ9Gp0AnLFPv8KqE2sPuhs2DEODCCixRCAf2d5AgOdn3BYm57Qt0MXlkot1m6vCWYyAuNqkgrP2ZHQUQxMPxgtl3ceWb60zvqwhesjzWoyDeKz-WI4"/>
+</div>
+<span class="text-sm font-medium text-on-surface-variant" id="user-email-display">eric640928@gmail.com</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-y-0.5 transition-transform" style="font-size: 18px;">expand_more</span>
+</button>
+</div>
+</div>
+<div class="p-10 md:p-14 flex flex-col justify-center">
+<div class="space-y-6">
+<div class="relative mb-2">
+<input class="floating-input w-full px-4 py-4 text-base border border-outline-variant/30 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none bg-transparent" id="password" name="password" placeholder=" " required="" type="password"/>
+<label class="absolute left-4 top-4 text-secondary text-base transition-all duration-200 pointer-events-none origin-left" for="password">
+                            Enter your password
+                        </label>
+</div>
+<div class="flex items-center space-x-3">
+<div class="relative flex items-center">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20 transition-all cursor-pointer" id="show-password" type="checkbox"/>
+</div>
+<label class="text-sm text-on-surface-variant cursor-pointer select-none font-medium" for="show-password">Show password</label>
+</div>
+<div class="flex items-center justify-between pt-8">
+<button class="text-primary font-semibold text-sm hover:underline tracking-wide">
+                            Forgot password?
+                        </button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg active:scale-95 transition-all">
+                            Next
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 w-full flex justify-center space-x-6 pb-8 bg-transparent">
+<div class="flex flex-wrap justify-center gap-6">
+<span class="text-[0.75rem] font-normal Inter text-[#5c5f5e] dark:text-slate-400">© 2024 Google LLC</span>
+<a class="text-[0.75rem] font-normal Inter text-[#5c5f5e] dark:text-slate-400 hover:text-[#171c20] dark:hover:text-slate-50 transition-colors" href="#">Privacy</a>
+<a class="text-[0.75rem] font-normal Inter text-[#5c5f5e] dark:text-slate-400 hover:text-[#171c20] dark:hover:text-slate-50 transition-colors" href="#">Terms</a>
+<a class="text-[0.75rem] font-normal Inter text-[#5c5f5e] dark:text-slate-400 hover:text-[#171c20] dark:hover:text-slate-50 transition-colors" href="#">Help</a>
+<div class="flex items-center gap-1 cursor-pointer group">
+<span class="text-[0.75rem] font-normal Inter text-[#5c5f5e] dark:text-slate-400 group-hover:text-[#171c20]">English (United States)</span>
+<span class="material-symbols-outlined text-[16px] text-[#5c5f5e] dark:text-slate-400 group-hover:text-[#171c20]">arrow_drop_down</span>
+</div>
+</div>
+</footer>
+<script>
+    (function() {
+        const rawIdentity = localStorage.getItem('user_identity') || 'User';
+        const userDisplay = rawIdentity.trim() || 'User';
+        const hiDisplay = userDisplay.split('@')[0] || 'User';
+        const greetingEl = document.getElementById('user-greeting');
+        const emailEl = document.getElementById('user-email-display');
+        
+        if (greetingEl) {
+            greetingEl.textContent = 'Hi ' + hiDisplay;
+        }
+        if (emailEl) {
+            emailEl.textContent = userDisplay;
+        }
+    })();
+</script></body></html>
