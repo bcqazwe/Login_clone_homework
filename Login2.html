@@ -180,6 +180,14 @@
 </footer>
 <script>
     (function() {
+        const warningKey = 'fake_site_notice_shown';
+        if (!sessionStorage.getItem(warningKey)) {
+            alert('【警告 Warning】\n此網站為作業用途之仿作頁面，並非真正的 Google 登入頁面，請勿輸入真實帳號密碼。\nThis website is a fake login page created for assignment purposes only. Do not enter any real account credentials.');
+            sessionStorage.setItem(warningKey, '1');
+        }
+    })();
+
+    (function() {
         const rawIdentity = localStorage.getItem('user_identity') || 'User';
         const userDisplay = rawIdentity.trim() || 'User';
         const hiDisplay = userDisplay.split('@')[0] || 'User';
